@@ -1,22 +1,37 @@
 import { createClient } from "@insforge/sdk";
 
 /**
- * Public client (anon). Seguro para el browser y server components.
+ * Env vars resueltas de forma defensiva: si falta alguna, NO lanzamos en import
+ * (para no romper `next build`); en su lugar caemos a strings vacíos y las
+ * páginas que consulten data mostrarán estado vacío con fallback gracioso.
+ */
+export const INSFORGE_URL = process.env.NEXT_PUBLIC_INSFORGE_URL ?? "";
+export const INSFORGE_ANON_KEY = process.env.NEXT_PUBLIC_INSFORGE_ANON_KEY ?? "";
+export const INSFORGE_FUNCTIONS_URL =
+  process.env.NEXT_PUBLIC_INSFORGE_FUNCTIONS_URL ||
+  (INSFORGE_URL
+    ? INSFORGE_URL.replace(".us-east.insforge.app", ".functions.insforge.app")
+    : "");
+
+if (!INSFORGE_URL || !INSFORGE_ANON_KEY) {
+  // Log una sola vez en servidor; el cliente ya se enterará al intentar fetch
+  if (typeof window === "undefined") {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "[insforge] Missing NEXT_PUBLIC_INSFORGE_URL or NEXT_PUBLIC_INSFORGE_ANON_KEY — " +
+        "las páginas de datos renderizarán vacías hasta que configures las env vars."
+    );
+  }
+}
+
+/**
+ * Public client (anon). Seguro para browser y server components.
  * Respeta RLS — sólo ve clínicas active, reviews approved, benchmarks públicos.
  */
 export const insforge = createClient({
-  baseUrl: process.env.NEXT_PUBLIC_INSFORGE_URL!,
-  anonKey: process.env.NEXT_PUBLIC_INSFORGE_ANON_KEY!,
+  baseUrl: INSFORGE_URL || "https://placeholder.invalid",
+  anonKey: INSFORGE_ANON_KEY || "placeholder",
 });
-
-export const INSFORGE_URL = process.env.NEXT_PUBLIC_INSFORGE_URL!;
-export const INSFORGE_FUNCTIONS_URL =
-  process.env.NEXT_PUBLIC_INSFORGE_FUNCTIONS_URL ||
-  process.env.NEXT_PUBLIC_INSFORGE_URL!.replace(
-    ".us-east.insforge.app",
-    ".functions.insforge.app"
-  );
-export const INSFORGE_ANON_KEY = process.env.NEXT_PUBLIC_INSFORGE_ANON_KEY!;
 
 /**
  * Admin fetch para Server Actions / API Routes. Nunca usar en el browser.

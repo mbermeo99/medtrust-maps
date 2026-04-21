@@ -7,14 +7,24 @@ const PUBLIC_HDRS = {
 };
 
 async function rest<T>(path: string, revalidate = 60): Promise<T> {
-  const res = await fetch(`${INSFORGE_URL}/api/database/records/${path}`, {
-    headers: PUBLIC_HDRS,
-    next: { revalidate },
-  });
-  if (!res.ok) {
-    throw new Error(`rest ${path} failed: ${res.status} ${await res.text()}`);
+  if (!INSFORGE_URL || !INSFORGE_ANON_KEY) {
+    // Sin envs configuradas: devolvemos vacío en lugar de tronar el build.
+    return [] as unknown as T;
   }
-  return res.json();
+  try {
+    const res = await fetch(`${INSFORGE_URL}/api/database/records/${path}`, {
+      headers: PUBLIC_HDRS,
+      next: { revalidate },
+    });
+    if (!res.ok) {
+      console.error(`[data] ${path} → ${res.status}`);
+      return [] as unknown as T;
+    }
+    return (await res.json()) as T;
+  } catch (e) {
+    console.error(`[data] ${path} fetch error`, e);
+    return [] as unknown as T;
+  }
 }
 
 export async function listActiveClinics(params: {
