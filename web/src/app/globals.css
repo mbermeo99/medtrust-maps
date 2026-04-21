@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #0e0e0e;
+  color: #e5e2e1;
+  min-height: 100%;
+}
+
+body {
+  background-image: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(107, 251, 154, 0.1) 0%,
+      transparent 55%
+    ),
+    radial-gradient(ellipse at 80% 100%, rgba(107, 251, 154, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4a3e;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-on-primary shadow-glow transition hover:bg-primary-dim disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-outline-variant px-5 py-2.5 text-sm font-medium text-foreground transition hover:border-primary hover:text-primary;
+  }
+  .card {
+    @apply rounded-2xl border border-outline-variant/40 bg-surface-low/70 backdrop-blur-sm;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-outline-variant/60 bg-surface-low px-3 py-1 text-xs font-medium text-muted-fg;
+  }
+  .trust-badge {
+    @apply inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-1 text-sm font-bold text-primary;
+  }
+}

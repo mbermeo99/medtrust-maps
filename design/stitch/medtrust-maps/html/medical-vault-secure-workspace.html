@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#85145a",
+            "on-secondary-container": "#ff93c8",
+            "on-secondary-fixed": "#3d0026",
+            "on-background": "#e5e2e1",
+            "secondary-container": "#85145a",
+            "on-tertiary-fixed": "#270058",
+            "on-tertiary-container": "#603e98",
+            "tertiary-container": "#d3b8ff",
+            "on-error": "#690005",
+            "on-tertiary": "#3e1975",
+            "surface-container-lowest": "#0e0e0e",
+            "on-surface": "#e5e2e1",
+            "primary": "#6bfb9a",
+            "secondary-fixed": "#ffd8e7",
+            "tertiary-fixed": "#ebdcff",
+            "secondary-fixed-dim": "#ffafd3",
+            "inverse-primary": "#006d36",
+            "on-primary": "#003919",
+            "surface-dim": "#131313",
+            "primary-fixed": "#6dfe9c",
+            "on-secondary": "#620040",
+            "on-surface-variant": "#bccabb",
+            "secondary": "#ffafd3",
+            "tertiary-fixed-dim": "#d4bbff",
+            "on-primary-fixed-variant": "#005227",
+            "primary-fixed-dim": "#4de082",
+            "primary-container": "#4ade80",
+            "surface": "#131313",
+            "surface-tint": "#4de082",
+            "surface-container-highest": "#353534",
+            "error": "#ffb4ab",
+            "surface-variant": "#353534",
+            "tertiary": "#eadaff",
+            "surface-container-low": "#1c1b1b",
+            "inverse-on-surface": "#313030",
+            "error-container": "#93000a",
+            "on-primary-fixed": "#00210c",
+            "inverse-surface": "#e5e2e1",
+            "surface-container": "#201f1f",
+            "surface-bright": "#393939",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#55338d",
+            "outline-variant": "#3d4a3e",
+            "outline": "#869486",
+            "on-primary-container": "#005e2d",
+            "background": "#131313",
+            "surface-container-high": "#2a2a2a"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(32, 31, 31, 0.6);
+      backdrop-filter: blur(40px);
+    }
+    .ambient-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(211, 184, 255, 0.05) 0%, transparent 70%);
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary/30 antialiased overflow-hidden h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex h-screen w-64 border-r border-outline-variant/30 bg-surface flex-col py-4 font-inter text-sm font-medium">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-black text-blue-700 dark:text-blue-400">MedTrust Maps</h1>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+        Map View
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+        My Appointments
+      </a>
+<!-- ACTIVE TAB: Medical Vault -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+        Medical Vault
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+        Cost Tracker
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+        Support
+      </a>
+</nav>
+<div class="px-4 py-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3 mb-6 px-2">
+<img alt="Verified User Profile" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="professional headshot of a mature man with a friendly expression in a modern office setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgKdKxbjJ2cVkFjQByVLoM4_jjApRwo9Wfit6trCELdmGon-p23NpAlVsqnWBdRodk1bAwgPZFnCH__sLHKisK2Mnswv2_ge87sLqzE0QqOyk9AGTACm139c0JBzEX2egYVzTLdsBVrj0KDvWuigkIkr3YNYQIGFEaaGNGlpVr5daE_3rFTnPIg-3wlVnwBOl5QfKERuzOm81Yh61DVW2LJo5d3NiJLzTh9FE7EElaIyfW7Q8Kbh52bGyNeZ51ju1vXsxHUI7rz5A"/>
+<div>
+<p class="font-bold text-on-surface">Premium Member</p>
+<p class="text-xs text-primary/80">Trust Level: Gold</p>
+</div>
+</div>
+<button class="w-full py-3 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-transform">
+        Consult Specialist
+      </button>
+</div>
+<div class="mt-auto pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+        Settings
+      </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-error-container hover:bg-error-container/10 mx-2 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+        Logout
+      </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col relative overflow-hidden bg-surface-container-lowest">
+<!-- Ambient Backdrop Decor -->
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] ambient-glow opacity-60 pointer-events-none"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm md:static md:bg-transparent md:backdrop-blur-none md:border-none md:shadow-none">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between font-inter antialiased">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-blue-800 dark:text-blue-200 md:hidden">MedTrust Maps</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Clinics</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Procedures</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Destinations</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1" href="#">The Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full text-sm text-on-surface hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+            Search Records...
+          </button>
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-semibold text-sm hover:opacity-80 active:scale-95 transition-transform">
+            Access Vault
+          </button>
+</div>
+</div>
+</header>
+<!-- Vault Content -->
+<section class="flex-1 overflow-y-auto pt-24 pb-32 md:pt-12 px-6 md:px-12 no-scrollbar">
+<div class="max-w-6xl mx-auto">
+<!-- Header & Branding -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs" data-icon="verified_user">verified_user</span>
+                Military Grade Encryption
+              </div>
+</div>
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-2">The Vault</h2>
+<p class="text-on-surface-variant text-lg max-w-xl">Your medical heritage, secured with biometric keys and accessible globally for your medical journey.</p>
+</div>
+<div class="flex gap-4">
+<div class="p-4 rounded-xl border border-outline-variant/20 glass-panel flex flex-col items-center justify-center min-w-[120px]">
+<span class="text-2xl font-bold text-primary">24 GB</span>
+<span class="text-[10px] uppercase text-on-surface-variant font-bold">Storage Used</span>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/20 glass-panel flex flex-col items-center justify-center min-w-[120px]">
+<span class="text-2xl font-bold text-secondary">03</span>
+<span class="text-[10px] uppercase text-on-surface-variant font-bold">New Alerts</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid for Medical Files -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Highlight: Recent CT Scan -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="h-[400px] rounded-xl overflow-hidden glass-panel border border-outline-variant/15 group-hover:border-primary/40 transition-all flex flex-col relative">
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<span class="px-3 py-1 bg-primary text-on-primary rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                  Verified
+                </span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface rounded-full text-xs font-bold">
+                  DICOM 3.0
+                </span>
+</div>
+<div class="flex-1 bg-surface-container-lowest overflow-hidden">
+<img alt="Detailed CT Scan imaging" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="monochrome medical CT scan image of a human skull and torso with blue surgical lighting highlights, sharp clinical detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8XJ_kZehxz5LKJNazTUebMI_ScYDF_aGXX-M0fUfgc_iLSqzOoVxoOY430-HL9Pe896tb7GKW1kz8ENsictwgjyCuugd_ebaV4YTla_CKza5k7xb2gN34r9y4pixtCBKtQhBSliMJSFrUGspiQzkfL8mzGNEj47MTkY2263FTRQyrj1KK-gb_Y7BFGkran7Neh2kg57TDjMTJLN8SWDrtI2ZhHIFp8HzFCkLq1un5ovrEn3tCL1Qt6Jt7QW6JAaVr5EIXtD7xt2M"/>
+</div>
+<div class="p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Cranial-Thoracic Multi-Planar Scan</h3>
+<p class="text-on-surface-variant text-sm">Uploaded Jan 12, 2024 • 1.4 GB</p>
+</div>
+<button class="p-4 rounded-full bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="open_in_full">open_in_full</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vertical Secondary: X-Ray Series -->
+<div class="md:col-span-4 group">
+<div class="h-full rounded-xl overflow-hidden glass-panel border border-outline-variant/15 p-6 flex flex-col">
+<div class="aspect-square bg-surface-container-lowest rounded-lg mb-6 overflow-hidden relative border border-outline-variant/20">
+<img alt="Chest X-Ray" class="w-full h-full object-cover opacity-40" data-alt="high contrast medical x-ray of a human ribcage and lungs, dark cinematic background with subtle teal overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD36W_cyuFfEj2CkHGiKX3TirbbxFUF1HrinvZW9MqKTgTXIZl1IaTU6S2obnOgbTySh40ECtLadDkwv0fnwShvZlpzKX2dz2KsV3wPKkNtnMqhIdpjsdypfbWC52VyVyOa0csvGRUWARBTbkUZkkkXYPnVBf6aobp2cuKmcyAsbzU3Xt8a42eobpzkSAoX2EADIDZ-Fnkla2ITQJFdRHcpoD2HIRBFX7k-kntvtgCIBr1WizGYBs7UfAsGspF4_vhydq-D7fzopBE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary/40" data-icon="radiology">radiology</span>
+</div>
+</div>
+<h3 class="text-lg font-headline font-bold text-on-surface mb-1">Thoracic X-Ray Series</h3>
+<p class="text-on-surface-variant text-xs mb-6">4 Files • Verified by Global Diagnostics</p>
+<div class="mt-auto space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="share">share</span>
+<span class="text-sm font-medium">Shared with Mayo Clinic</span>
+</div>
+<span class="text-[10px] text-primary font-bold">ACTIVE</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-surface-container-highest text-on-surface text-sm font-bold border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+                  View Full Gallery
+                </button>
+</div>
+</div>
+</div>
+<!-- Bento: Genomic Report -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="rounded-xl p-6 glass-panel border border-outline-variant/15 flex flex-col h-full hover:bg-surface-container-high/50 transition-all">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="dna" style="font-variation-settings: 'FILL' 1;">genetics</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Genomic Sequence Report</h3>
+<p class="text-on-surface-variant text-sm mb-4">Complete ancestral and predisposition markers analysis.</p>
+<div class="flex items-center gap-2 mt-auto">
+<span class="text-xs px-2 py-0.5 rounded bg-secondary/20 text-secondary border border-secondary/30">LOCKED</span>
+<span class="text-xs text-on-surface-variant italic">Requires FaceID</span>
+</div>
+</div>
+</div>
+<!-- Bento: Prescription History -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="rounded-xl p-6 glass-panel border border-outline-variant/15 flex flex-col h-full hover:bg-surface-container-high/50 transition-all">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="pill">pill</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Digital Rx History</h3>
+<p class="text-on-surface-variant text-sm mb-4">Blockchain-verified ledger of all prescribed medications.</p>
+<div class="flex -space-x-2 mt-auto">
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="portrait of a professional doctor in white lab coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFbvdViL8AyfHV25T_rGz4V4Gm54ftnfaVl-pvli810dlF4gGbWqNyCqSxRLvW9gLMNluKIy-eiRjyChSx3w-3cObtLg-Nm8LCGCg7_hXdl6oWtov-Pg3XnrCaG4f0gBOtfKRyQubkNkCI94NfkKAaqRXwBsTqZBXKq6laY4_1icujT1h8UE2L4y5yp-X4xJo5wGrNVmTQVpo0u4ufojyAQUtkMtOUHV_NvSNPwfPcqR-dP9rJwwp4U7wUctf2Juefs6iGCTSmASQ"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="female doctor with medical stethoscope smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAariH46eW0_JbTAKE6-7Flw_rP2ltohWe_ZE__VZ_axMtvp0F88rPRk49D3qjkUVnZy3jrU1yMz788F6hMO3Jw112INH8l3tV08waRwy7B67ZpOgDhdVedaOEZ0xgqgdZ_0dWjf3DxK2iXCNaIQs1C54jVdNKX2yOYR4_9Ax2wFStFULQgUTIT2wKjCVL-gQzmbre_QoTj8X4hsGYSNJZVrK1M2Dxjuo0JiTivqrjWCB1nbb4chti_FNR9cDsr0JjcTPZaXJl6exU"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+2</div>
+</div>
+</div>
+</div>
+<!-- Bento: Lab Results -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="rounded-xl p-6 glass-panel border border-outline-variant/15 flex flex-col h-full hover:bg-surface-container-high/50 transition-all">
+<div class="w-12 h-12 rounded-full bg-on-tertiary-container/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="biotech">biotech</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Biometric Lab Panels</h3>
+<p class="text-on-surface-variant text-sm mb-4">Bloodwork, metabolic panels, and hormone levels.</p>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden mt-auto">
+<div class="h-full bg-primary" style="width: 75%"></div>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold mt-2 uppercase tracking-widest">Optimizing Health State</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shared Securely Footer Action -->
+<div class="fixed bottom-0 left-0 md:left-64 right-0 p-6 z-40 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/90 to-transparent">
+<div class="max-w-4xl mx-auto glass-panel border border-primary/20 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Secure Vault Sharing</p>
+<p class="text-on-surface-variant text-xs">Authorize temporary access to certified medical partners.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<select class="bg-surface-container-highest border-none text-on-surface text-sm rounded-lg px-4 py-2 focus:ring-1 focus:ring-primary w-full md:w-48 appearance-none">
+<option>Select Specialist</option>
+<option>Cleveland Clinic - Cardio</option>
+<option>Seoul National Hospital</option>
+<option>Bumrungrad International</option>
+</select>
+<button class="bg-primary text-on-primary font-bold px-6 py-2 rounded-lg text-sm hover:brightness-110 active:scale-95 transition-all whitespace-nowrap">
+            Share Securely
+          </button>
+</div>
+</div>
+</div>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/90 dark:bg-slate-950/90 backdrop-blur-lg border-t border-outline-variant/20 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] h-16 flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-blue-600 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-blue-600 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Search</span>
+</a>
+<!-- ACTIVE: Vault -->
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/30 rounded-xl px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-blue-600 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</main>
+<!-- Floating Action Button - Supressed for Vault Page as per mandate -->
+</body></html>

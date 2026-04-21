@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinic Profile | MedTrust Maps</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed-variant": "#85145a",
+                "on-secondary-container": "#ff93c8",
+                "on-secondary-fixed": "#3d0026",
+                "on-background": "#e5e2e1",
+                "secondary-container": "#85145a",
+                "on-tertiary-fixed": "#270058",
+                "on-tertiary-container": "#603e98",
+                "tertiary-container": "#d3b8ff",
+                "on-error": "#690005",
+                "on-tertiary": "#3e1975",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "primary": "#6bfb9a",
+                "secondary-fixed": "#ffd8e7",
+                "tertiary-fixed": "#ebdcff",
+                "secondary-fixed-dim": "#ffafd3",
+                "inverse-primary": "#006d36",
+                "on-primary": "#003919",
+                "surface-dim": "#131313",
+                "primary-fixed": "#6dfe9c",
+                "on-secondary": "#620040",
+                "on-surface-variant": "#bccabb",
+                "secondary": "#ffafd3",
+                "tertiary-fixed-dim": "#d4bbff",
+                "on-primary-fixed-variant": "#005227",
+                "primary-fixed-dim": "#4de082",
+                "primary-container": "#4ade80",
+                "surface": "#131313",
+                "surface-tint": "#4de082",
+                "surface-container-highest": "#353534",
+                "error": "#ffb4ab",
+                "surface-variant": "#353534",
+                "tertiary": "#eadaff",
+                "surface-container-low": "#1c1b1b",
+                "inverse-on-surface": "#313030",
+                "error-container": "#93000a",
+                "on-primary-fixed": "#00210c",
+                "inverse-surface": "#e5e2e1",
+                "surface-container": "#201f1f",
+                "surface-bright": "#393939",
+                "on-error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#55338d",
+                "outline-variant": "#3d4a3e",
+                "outline": "#869486",
+                "on-primary-container": "#005e2d",
+                "background": "#131313",
+                "surface-container-high": "#2a2a2a"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .primary-gradient {
+            background: linear-gradient(135deg, #6bfb9a 0%, #4ade80 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm font-inter antialiased">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="text-xl font-bold tracking-tight text-blue-800 dark:text-blue-200">
+                MedTrust Maps
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Clinics</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Procedures</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">The Vault</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 rounded-full border border-outline-variant text-sm font-medium hover:bg-surface-container-low/50 transition-all">
+                    Access Vault
+                </button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User profile avatar" data-alt="professional headshot of a person with friendly expression in high-end corporate setting with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxQMWbsV64ajLs5Gn5Y4qiF5XMrmXKsJzKTWep9rkbrZQNLLRj0xHWsSYn5R_b1hSFWMCbitHC7kToaitx9tM5ihCe2NSnEQrM6XICf6iKMbkRgCX7y_z8yM7Ibz0p94cae3jGfQnGvbE4V6If0GxXjr_EgYp6BvofMNbFtA_4qUE1gBrQ0_iCCc_98bGDAK_dScoOnewxlAQs7WHYeJ18UdxDFG0vj5jj5T30OPbAyWmhxCDVJ4zuPtTs4XYOA8HSG718AHye6LI"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section & Gallery -->
+<section class="relative w-full px-4 md:px-12 pt-8">
+<div class="grid grid-cols-12 gap-4 h-[500px] md:h-[600px]">
+<div class="col-span-12 md:col-span-8 rounded-xl md:rounded-xl overflow-hidden relative group">
+<img alt="Clinic Interior" class="w-full h-full object-cover" data-alt="ultra-modern luxury clinic lobby with high ceilings, minimalist marble furniture, warm ambient lighting, and floor-to-ceiling windows with city view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4WJUi7bAorRf2Wl0ZHGQslQGtxTmV1xfaZJRAHMmrar0Pth3HXLXazKNKEFRy_vTFGOgKbJ2t8gGR7DzTMLckr3mQ7q12JlhB6lqwDFgdwljWDJ0BmW8X9zLSmbZIn1ky4YvdjM02LfW94iZ5M-u0g3lkxb6Y9IPrAI1nPW8vl3KJ3LgqY34ToSKdDOHLcExPxcAFH1l0SdXe1LPr83cRawmqFV5imIeN2BatWYrG-h9Q3Gwd-DPwd9Gsf71oQXYBFzM1xzp1Cp8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<h1 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tight text-white mb-2">The Ethos Wellness Center</h1>
+<p class="text-primary font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                            Geneva, Switzerland • Accredited Specialist Center
+                        </p>
+</div>
+</div>
+<div class="hidden md:grid col-span-4 grid-rows-2 gap-4">
+<div class="rounded-xl overflow-hidden">
+<img alt="Surgery Suite" class="w-full h-full object-cover" data-alt="clean high-tech surgical operating room with advanced robotic equipment and soothing mint teal lighting details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChgIPhaWNrkAW_0CRwrEdHLMFa5q_9wj-Xq0mBiy7zHg3nGLvtrnTw2oV_nNzhvIR_6n-IPY5ZJIiJTdIqaPX9wdZaIAg7-KDW5hcuiCBLJQuxDQPP6kppovd5v7copGA7m7PT6FqfnT8EHKNWo3Zv22cbJhsdHeBDlqxUIJPR33PIpSHmPUr-1uotOZnsJq2aKLvhDqrTFXzkVUbJXi_RaDXV3eB2KlPZYXmyHYxTQeN6DOk8DU1smsxbij0QCKECje5kgbMgRIU"/>
+</div>
+<div class="rounded-xl overflow-hidden relative">
+<img alt="Recovery Lounge" class="w-full h-full object-cover" data-alt="private luxury recovery suite with plush furniture, wood paneling, and curated art pieces overlooking a tranquil mountain range" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRs3y-CST9q6M7Bjs7RzE3uuFkIuvVVtDJl23bZEGLiuYxEC_JzzspQaCdMsvSrkUFvMzd-VAHL12iInTGT8PzF284iDfa2VxpBhGucu7FgfaiqxMjxloHCdjOwR_-QvG6jn8Xo2sWSC_vFxNYrJb8qSntY0hSjzSPvZLMumXhjR_v8SMosMlT8Rac7XMl-GYGbt4drIN5ETCMBd8EF3_y2KZNjuAS8UehKgOB7Rjg_kXJOW0uhA2oN22Pq8RFhaYWkSgBoixCqH8"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<span class="text-white font-bold">+12 Photos</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Area -->
+<section class="max-w-7xl mx-auto px-4 md:px-12 mt-[-60px] relative z-10">
+<div class="grid grid-cols-12 gap-8">
+<!-- Left: Info Modules -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Trust Summary Bar (Sticky concept) -->
+<div class="glass-panel rounded-xl p-6 border border-outline-variant/15 flex flex-wrap items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.19" stroke-dashoffset="29.4" stroke-width="6"></circle>
+</svg>
+<span class="absolute text-2xl font-headline font-black text-primary">87</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">MedTrust Score</p>
+<h3 class="text-xl font-headline font-bold text-on-surface">Verified Excellence</h3>
+<p class="text-sm text-on-surface-variant">Top 2% of European Facilities</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="bg-primary/10 border border-primary/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-bold text-primary">ISO Certified</span>
+</div>
+<div class="bg-primary/10 border border-primary/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-xs font-bold text-primary">High Trust</span>
+</div>
+</div>
+</div>
+<!-- About Module -->
+<div class="glass-panel rounded-xl p-10 border border-outline-variant/15">
+<h2 class="text-3xl font-headline font-extrabold mb-6 tracking-tight">About the Clinic</h2>
+<div class="prose prose-invert max-w-none text-on-surface-variant leading-relaxed text-lg">
+<p>Located in the heart of Geneva's medical district, The Ethos Wellness Center specializes in advanced regenerative procedures and aesthetic refinement. Our facility bridges the gap between surgical precision and high-hospitality comfort.</p>
+<p class="mt-4">Founded in 2012, we have pioneered the "Concierge Medical" approach, ensuring each international patient receives a bespoke journey from arrival to post-operative recovery.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">hotel</span>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Recovery Beds</p>
+<p class="text-xl font-headline font-bold">12 Luxury</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">language</span>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Languages</p>
+<p class="text-xl font-headline font-bold">English, FR, DE</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">star</span>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Success Rate</p>
+<p class="text-xl font-headline font-bold">99.2%</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">event_available</span>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Avg Wait</p>
+<p class="text-xl font-headline font-bold">14 Days</p>
+</div>
+</div>
+</div>
+<!-- Meet the Doctors -->
+<div class="glass-panel rounded-xl p-10 border border-outline-variant/15">
+<div class="flex justify-between items-end mb-8">
+<h2 class="text-3xl font-headline font-extrabold tracking-tight">Meet the Specialists</h2>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:underline" href="#">View All Faculty <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Dr 1 -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/15 group hover:border-primary/40 transition-all">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Doctor" class="w-full h-full object-cover" data-alt="professional portrait of a male surgeon in high-end medical scrubs, looking confident with a slight smile in a modern clinic office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQs51eS8u4wq5FmTmY8ThO4I3UEZl-aZmqL4WgB1d3Zx-SjKJzbdDTwZMN9qeePTAPS9uV58jEFu_YRSKI29iABrtba0iiiTUHFdjs03x9VgUWwsND-PGlmquzFYoGJ_oMZHsp1nnlN3B9OCi9dTtB1FOu7bzQu3jEuEt6-DSCq5myubuTREoIvHmPGtnrSfYmHeqm32rHR-DbrFMIR6fLtnsyz47IwWG6WM4m8OaLhZn1xUuJqWJAjqp6jxb2ZR6e07NIkLuwQFs"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Dr. Adrian Vance</h4>
+<p class="text-primary text-sm font-medium mb-2">Head of Regenerative Surgery</p>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                                        Stanford Medicine Alum
+                                    </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                                        Board Certified (18 yrs)
+                                    </div>
+</div>
+</div>
+<!-- Dr 2 -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/15 group hover:border-primary/40 transition-all">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Doctor" class="w-center h-full object-cover" data-alt="close-up of a female medical professional in clean white uniform, professional and approachable expression, soft high-key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCQgvim0jhnEtiXvkLhNWd8Y64ZoPyaoKp8dEj2L6K7I8T7LQh_6Y2WpVGpCUzA7R1BP55ESMGuOlq0JWa2egJm_ak01YWR919QYGvvitVxXPeunPEDY_15TocXwVxza5njYeJPpvbCwk6rondFOezZ6Yc1N8ssH1luXKm_MWU0gk_X5yLlnSMTRNhhuZRqr1ty_5m6J5wjrxpzTYq4ciKxMBTwqTgH2OMZrhFFpF7lv1mePRNS7ZjvyZlHKBlLtoFzJ4bSbYXEg"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Dr. Elena Ross</h4>
+<p class="text-primary text-sm font-medium mb-2">Aesthetic Specialist</p>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                                        Johns Hopkins Fellow
+                                    </div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                                        Double-Board Certified
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Procedures Bento Grid -->
+<div class="glass-panel rounded-xl p-10 border border-outline-variant/15">
+<h2 class="text-3xl font-headline font-extrabold mb-8 tracking-tight">Available Procedures</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="col-span-1 md:col-span-2 p-6 rounded-lg bg-surface-container-high border border-outline-variant/15 relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold mb-2">Advanced Stem Cell Therapy</h3>
+<p class="text-sm text-on-surface-variant mb-4">Precision-guided musculoskeletal repair using autologous cellular extraction.</p>
+<span class="text-primary font-bold text-sm">Starts from $12,400</span>
+</div>
+<div class="absolute right-[-20px] bottom-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">biotech</span>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-high border border-outline-variant/15 hover:bg-surface-container-highest transition-all">
+<h3 class="text-xl font-headline font-bold mb-2">FUE Hair Restore</h3>
+<p class="text-sm text-on-surface-variant mb-4">High-density follicular transplantation.</p>
+<span class="text-primary font-bold text-sm">$6,500</span>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-high border border-outline-variant/15 hover:bg-surface-container-highest transition-all">
+<h3 class="text-xl font-headline font-bold mb-2">Facial Sculpting</h3>
+<p class="text-sm text-on-surface-variant mb-4">Non-invasive structural contouring.</p>
+<span class="text-primary font-bold text-sm">$3,200</span>
+</div>
+<div class="col-span-1 md:col-span-2 p-6 rounded-lg bg-surface-container-high border border-outline-variant/15 relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="text-xl font-headline font-bold mb-2">Full Body Detox Protocol</h3>
+<p class="text-sm text-on-surface-variant mb-4">Hyperbaric chamber sessions paired with intravenous nutritional optimization.</p>
+<span class="text-primary font-bold text-sm">$8,900</span>
+</div>
+<div class="absolute right-[-20px] bottom-[-20px] opacity-10">
+<span class="material-symbols-outlined text-[120px]">spa</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Package Estimate -->
+<div class="col-span-12 lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<div class="glass-panel rounded-xl p-8 border border-primary/20 shadow-xl relative overflow-hidden">
+<!-- Background Accent -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+<h3 class="text-2xl font-headline font-extrabold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Package Estimate
+                            </h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="text-sm">Primary Procedure</span>
+<span class="font-bold text-on-surface">$12,400</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="text-sm">Clinic Fees &amp; Nursing</span>
+<span class="font-bold text-on-surface">$2,100</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="text-sm">Luxury Stay (4 Nights)</span>
+<span class="font-bold text-on-surface">$3,600</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="text-sm">Concierge Transfer</span>
+<span class="font-bold text-on-surface">$450</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-lg font-headline font-bold">Total Est.</span>
+<span class="text-2xl font-headline font-black text-primary">$18,550</span>
+</div>
+</div>
+<button class="w-full primary-gradient py-4 rounded-full font-headline font-bold text-on-primary hover:scale-[1.02] transition-transform active:scale-95 flex items-center justify-center gap-2 mb-4">
+                                Reserve Consultation
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full py-4 rounded-full font-headline font-bold text-on-surface border border-outline hover:bg-surface-container-high transition-colors">
+                                Add to Vault
+                            </button>
+<p class="text-[11px] text-on-surface-variant text-center mt-6 uppercase tracking-widest font-bold">Final quote provided after clinical review</p>
+</div>
+<!-- Secondary Widget -->
+<div class="glass-panel rounded-xl p-6 border border-outline-variant/15">
+<h4 class="font-headline font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">flight</span>
+                                Travel Assistance
+                            </h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Need help with Swiss medical visas or private jet charters? Our lifestyle managers are on standby.</p>
+<a class="inline-block mt-4 text-primary text-sm font-bold hover:underline" href="#">Contact Concierge</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Hidden on Mobile, Logic from JSON) -->
+<aside class="hidden lg:flex fixed left-0 top-16 h-screen w-20 flex-col py-4 bg-surface dark:bg-slate-950 border-r border-outline-variant transition-colors duration-200 z-40 items-center">
+<div class="flex flex-col gap-6">
+<button class="p-3 rounded-lg text-on-surface-variant hover:bg-blue-50 dark:hover:bg-blue-900/20">
+<span class="material-symbols-outlined">map</span>
+</button>
+<button class="p-3 rounded-lg text-on-surface-variant hover:bg-blue-50 dark:hover:bg-blue-900/20">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="p-3 rounded-lg bg-primary-container text-on-primary-container mx-2 shadow-lg">
+<span class="material-symbols-outlined">lock</span>
+</button>
+<button class="p-3 rounded-lg text-on-surface-variant hover:bg-blue-50 dark:hover:bg-blue-900/20">
+<span class="material-symbols-outlined">payments</span>
+</button>
+<button class="p-3 rounded-lg text-on-surface-variant hover:bg-blue-50 dark:hover:bg-blue-900/20">
+<span class="material-symbols-outlined">help_center</span>
+</button>
+</div>
+<div class="mt-auto flex flex-col gap-4 mb-20">
+<button class="p-3 rounded-lg text-on-surface-variant hover:bg-blue-50 dark:hover:bg-blue-900/20">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/90 dark:bg-slate-950/90 backdrop-blur-lg border-t border-outline-variant/20 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] h-16 flex justify-around items-center px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/30 rounded-xl px-4 py-1">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Vault</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold tracking-wide uppercase">Profile</span>
+</div>
+</nav>
+<!-- Background Ambient Glows -->
+<div class="fixed top-[20%] right-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-tertiary/5 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
+</body></html>
